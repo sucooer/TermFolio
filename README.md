@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>TermFolio</h1>
-	<sub><a href="https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
+	<sub><a href="https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md">中文文档</a></sub>
 </div>
 <hr/>
 <p align="center">🚀 <strong>An elegant terminal-style portfolio component for developers</strong></p>
@@ -9,22 +9,22 @@
     <img src="https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square">
   </a>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/github/package-json/v/SimonAKing/react-terminal?style=flat-square">
+    <img src="https://img.shields.io/github/package-json/v/SimonAKing/termfolio?style=flat-square">
   </a>
-  <a href="https://github.com/SimonAKing/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
+  <a href="https://github.com/SimonAKing/termfolio/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
 
 
 
 ## 👀Table of contents
 
-- [🎉Introduction](https://github.com/SimonAKing/react-terminal#introduction)
-- [💡Install](https://github.com/SimonAKing/react-terminal#install)
-- [✨Usage](https://github.com/SimonAKing/react-terminal#usage)
-- [🎨TODO](https://github.com/SimonAKing/react-terminal#todo)
-- [🎯Dev](https://github.com/SimonAKing/react-terminal#dev)
-- [💚Reward](https://github.com/SimonAKing/react-terminal#reward)
-- [📃License](https://github.com/SimonAKing/react-terminal#license)
+- [🎉Introduction](https://github.com/SimonAKing/termfolio#introduction)
+- [💡Install](https://github.com/SimonAKing/termfolio#install)
+- [✨Usage](https://github.com/SimonAKing/termfolio#usage)
+- [🎨TODO](https://github.com/SimonAKing/termfolio#todo)
+- [🎯Dev](https://github.com/SimonAKing/termfolio#dev)
+- [💚Reward](https://github.com/SimonAKing/termfolio#reward)
+- [📃License](https://github.com/SimonAKing/termfolio#license)
 
 
 
@@ -56,13 +56,13 @@ Recommended Use Cases:
 ## 💡Install
 
 ```sh
-npm i react-terminal-app
+npm i termfolio
 ```
 
 OR
 
 ```sh
-yarn add react-terminal-app
+yarn add termfolio
 ```
 
 This package also depends on `react` so make sure you've already installed it.
@@ -72,9 +72,9 @@ This package also depends on `react` so make sure you've already installed it.
 ## ✨Usage
 
 ```jsx
-import Terminal from 'react-terminal-app'
+import Terminal from 'termfolio'
 
-// refer to: https://github.com/SimonAKing/react-terminal/blob/master/demo/src/commands
+// refer to: https://github.com/SimonAKing/termfolio/blob/master/demo/src/commands
 import dynamicList from 'command/dynamic'
 import staticList from 'command/static'
 
@@ -144,7 +144,7 @@ type command = ICommand | string
 
 The class name of the root node, you can customize the style.
 
-Defaults to `react-terimnal-app`
+Defaults to `termfolio`
 
 
 
@@ -293,8 +293,8 @@ Defaults to `react-terimnal-app`
 This project was generated with [nwb](https://github.com/insin/nwb).
 
 ```sh
-git clone https://github.com/SimonAKing/react-terminal
-cd react-terminal
+git clone https://github.com/SimonAKing/termfolio
+cd termfolio
 yarn install
 yarn start
 ```
