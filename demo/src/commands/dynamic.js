@@ -10,7 +10,7 @@ const introduction = [
   {
     type: 'system',
     label: 'System',
-    content: `cd 一个坏掉的番茄`
+    content: `cd react-terminal`
   },
   {
     type: 'system',

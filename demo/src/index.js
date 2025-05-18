@@ -10,7 +10,7 @@ const cmd = { dynamicList, staticList }
 const config = {
   prompt: '➜  ~ ',
   version: '1.0.0',
-  initialDirectory: '一个坏掉的番茄',
+  initialDirectory: '~',
   bootCmd: 'intro',
   welcomeMessage: 'Welcome to React Terminal! Type "help" to see available commands.',
 }
