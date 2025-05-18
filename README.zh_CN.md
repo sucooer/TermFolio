@@ -1,6 +1,4 @@
 <div align="center">
-	<img src="./docs/logo.png" alt="react-terminal">
-	<br>
 	<h1>React-terminal</h1>
 	<sub><a href="https://github.com/SimonAKing/react-terminal">English document</a></sub>
 </div>
@@ -31,7 +29,7 @@
 
 ## 🎉简介
 
-![terminal-intro](./docs/view.jpg)
+![terminal-intro](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2YwcmZlMzhzcmx2YW5tOXQ5ZGdmand6bjVianN5a21zdm04eWRueSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNmpU6nhm2GR8IXb2r/giphy.gif)
 
 [在线体验](https://simonaking.com/about/)
 
