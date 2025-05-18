@@ -1,27 +1,24 @@
-import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 
 import {
-  StyledTerminalWrapper,
-  StyledTerminal,
-  StyledTerminalInner,
-  StyledInputWrapper,
-  StyledInput,
-  StyledPrompt,
-  StyledLoadingCursor,
   StyledBlinkCursor,
   StyledCommand,
-  StyledLine,
   StyledHeader,
-  StyledHeaderTitle,
-  StyledHeaderDotList,
   StyledHeaderDotItem,
+  StyledHeaderDotList,
+  StyledHeaderTitle,
+  StyledInput,
+  StyledInputWrapper,
+  StyledLine,
+  StyledLoadingCursor,
+  StyledPrompt,
+  StyledTerminal,
+  StyledTerminalInner,
+  StyledTerminalWrapper,
 } from './style'
 
-import {
-  CSSTransition,
-  TransitionGroup,
-} from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import { systemCmdList, tipCmdList } from './commands'
 
@@ -31,16 +28,16 @@ class Terminal extends PureComponent {
   static propTypes = {
     cmd: PropTypes.shape({
       dynamicList: PropTypes.object,
-      staticList: PropTypes.object
+      staticList: PropTypes.object,
     }).isRequired,
     config: PropTypes.shape({
       initialDirectory: PropTypes.string,
       prompt: PropTypes.string,
       version: PropTypes.string,
-      bootCmd: PropTypes.string
+      bootCmd: PropTypes.string,
     }),
-    className: PropTypes.string
-  }
+    className: PropTypes.string,
+  };
 
   static defaultProps = {
     className: 'react-terimnal-app',
@@ -48,12 +45,12 @@ class Terminal extends PureComponent {
       initialDirectory: 'src',
       prompt: '➜  ~ ',
       version: '1.0.0',
-      bootCmd: 'intro'
-    }
-  }
+      bootCmd: 'intro',
+    },
+  };
 
-  historyCmdList = []
-  historyCmdIndex = 0
+  historyCmdList = [];
+  historyCmdIndex = 0;
 
   constructor(props) {
     super(props)
@@ -67,22 +64,30 @@ class Terminal extends PureComponent {
       cmdList: [],
       command: '',
       directory: config.initialDirectory,
-      isPrinting: true
+      currentPrompt: `➜  ${config.initialDirectory} `,
+      isPrinting: true,
+      processes: [
+        { pid: 1, name: 'system', status: 'running' },
+        { pid: 2, name: 'terminal', status: 'running' },
+      ],
     }
 
     this.supportedCmdList = [
       ...Object.keys(cmd.staticList),
-      ...Object.keys(cmd.dynamicList)
+      ...Object.keys(cmd.dynamicList),
     ]
     this.allCmdList = [
       ...this.supportedCmdList,
-      ...(Object.keys(systemCmdList).map(key => systemCmdList[key].aliasList).flat(1))
-
+      ...Object.keys(systemCmdList)
+        .map((key) => systemCmdList[key].aliasList)
+        .flat(1),
     ]
   }
 
   componentDidMount() {
-    const { config: { bootCmd } } = this.props
+    const {
+      config: { bootCmd },
+    } = this.props
     this.run(bootCmd).then(() => {
       const { help, clear, exit } = systemCmdList
       this.print([help, clear, exit])
@@ -96,30 +101,34 @@ class Terminal extends PureComponent {
     return cmd.dynamicList[command]
       .run(this.print, inputCommand)
       .then(this.print)
-      .catch(error => {
+      .catch((error) => {
         console.error(error)
         this.print(tipCmdList.error)
-      }).finally(() => {
+      })
+      .finally(() => {
         this.setState({ isPrinting: false })
       })
-  }
+  };
 
-  print = cmd => {
-    this.setState(prevState =>
-      ({ cmdList: [...prevState.cmdList, ...(Array.isArray(cmd) ? cmd : [cmd])] }))
+  print = (cmd) => {
+    this.setState((prevState) => ({
+      cmdList: [...prevState.cmdList, ...(Array.isArray(cmd) ? cmd : [cmd])],
+    }))
     this.autoScroll()
-  }
+  };
 
   inputFocus = () => {
     this.$inputEl.current.focus()
-  }
+  };
 
   autoScroll = () => {
     this.$terminal.current.scrollTop = this.$inputWrapper.current.offsetTop
-  }
+  };
 
-  handleKeyCommand = e => {
-    const { config: { prompt } } = this.props
+  handleKeyCommand = (e) => {
+    const {
+      config: { prompt },
+    } = this.props
     const isDownKey = e.keyCode === 40
     const isUpKey = e.keyCode === 38
     const isTabKey = e.keyCode === 9
@@ -131,7 +140,10 @@ class Terminal extends PureComponent {
     const isCtrlLKey = isLKey && e.ctrlKey && !e.shiftKey
 
     if (isDownKey) {
-      this.historyCmdIndex = Math.min(this.historyCmdIndex + 1, this.historyCmdList.length - 1)
+      this.historyCmdIndex = Math.min(
+        this.historyCmdIndex + 1,
+        this.historyCmdList.length - 1
+      )
     } else if (isUpKey) {
       this.historyCmdIndex = Math.max(this.historyCmdIndex - 1, 0)
     }
@@ -146,15 +158,24 @@ class Terminal extends PureComponent {
     }
 
     const { command, isPrinting } = this.state
-    if (isPrinting) { return }
+    if (isPrinting) {
+      return
+    }
 
     if (isTabKey) {
       if (!command) {
         this.setState({ command: 'help' })
       }
-      const canExtendCmdList = this.allCmdList.filter(c => c.startsWith(command))
+      const canExtendCmdList = this.allCmdList.filter((c) =>
+        c.startsWith(command)
+      )
       if (canExtendCmdList && canExtendCmdList.length) {
-        this.setState({ command: canExtendCmdList[Math.floor(Math.random() * canExtendCmdList.length)] })
+        this.setState({
+          command:
+            canExtendCmdList[
+              Math.floor(Math.random() * canExtendCmdList.length)
+            ],
+        })
       }
       e.preventDefault()
     }
@@ -178,10 +199,20 @@ class Terminal extends PureComponent {
 
     this.autoScroll()
     this.inputFocus()
+  };
+
+  updatePrompt = (directory) => {
+    this.setState({
+      currentPrompt: `➜  ${directory} `,
+      directory
+    })
   }
 
-  handleCommand = e => {
-    const { cmd, config: { prompt, version: versionNumber } } = this.props
+  handleCommand = (e) => {
+    const {
+      cmd,
+      config: { version: versionNumber },
+    } = this.props
     const isEnterKey = e.keyCode === 13
 
     if (!isEnterKey) {
@@ -190,23 +221,36 @@ class Terminal extends PureComponent {
     }
 
     if (!this.state.command) {
-      this.print(prompt)
+      this.print(this.state.currentPrompt)
       return
     }
 
     const command = this.state.command.toLowerCase().trim()
+    const [action, ...args] = command.split(' ')
+    const commandArgs = args.join(' ')
 
     this.historyCmdList.push(command)
     this.historyCmdIndex = this.historyCmdList.length
 
-    this.print(`${prompt}${command}`)
+    this.print(`${this.state.currentPrompt}${command}`)
     const cmdList = []
 
-    const [action, commandKey] = command.split(' ')
     const isStaticCommand = !!cmd.staticList[command]
     const isDynamicCommand = !!cmd.dynamicList[action]
 
-    const { exit, help, clear, pwd, cd, version } = systemCmdList
+    const {
+      exit,
+      help,
+      clear,
+      pwd,
+      cd,
+      version,
+      date,
+      whoami,
+      history,
+      env,
+      echo,
+    } = systemCmdList
     const { unknown, jump, supporting } = tipCmdList
 
     if (exit.aliasList.includes(action)) {
@@ -214,18 +258,45 @@ class Terminal extends PureComponent {
       this.print(cmdList)
       window.history.go(-1)
     } else if (help.aliasList.includes(action)) {
-      if (commandKey) {
-        const command = cmd.staticList[commandKey] || cmd.dynamicList[commandKey]
-        cmdList.push(command.description)
+      if (commandArgs) {
+        const command =
+          cmd.staticList[commandArgs] ||
+          cmd.dynamicList[commandArgs] ||
+          systemCmdList[commandArgs]
+        if (command) {
+          cmdList.push({
+            type: 'info',
+            label: commandArgs,
+            content: command.content,
+          })
+        } else {
+          cmdList.push({
+            type: 'error',
+            label: 'Error',
+            content: `No manual entry for ${commandArgs}`,
+          })
+        }
         this.print(cmdList)
       } else {
         cmdList.push(supporting)
-        const supportedCmdList = this.supportedCmdList.map(commandKey => {
-          const command = cmd.staticList[commandKey] || cmd.dynamicList[commandKey]
-          return ({ type: 'success', label: commandKey, content: `() => ${command.description}` })
-        })
-        cmdList.push(...supportedCmdList)
-        cmdList.push(clear, exit)
+        const allCommands = [
+          ...Object.entries(systemCmdList).map(([key, cmd]) => ({
+            type: 'system',
+            label: key,
+            // eslint-disable-next-line react/prop-types
+            content: cmd.content,
+          })),
+          ...this.supportedCmdList.map((commandKey) => {
+            const command =
+              cmd.staticList[commandKey] || cmd.dynamicList[commandKey]
+            return {
+              type: 'success',
+              label: commandKey,
+              content: command.description,
+            }
+          }),
+        ]
+        cmdList.push(...allCommands)
         this.print(cmdList)
       }
     } else if (clear.aliasList.includes(action)) {
@@ -233,18 +304,60 @@ class Terminal extends PureComponent {
     } else if (pwd.aliasList.includes(action)) {
       this.print(this.state.directory)
     } else if (cd.aliasList.includes(action)) {
-      if (commandKey) {
-        const directory = commandKey.trim()
+      if (commandArgs) {
+        const directory = commandArgs.trim()
         if (directory && directory.length < 20) {
-          this.setState({ directory })
+          this.updatePrompt(directory)
         }
       }
     } else if (version.aliasList.includes(action)) {
       this.print(versionNumber)
+    } else if (date.aliasList.includes(action)) {
+      this.print(new Date().toString())
+    } else if (whoami.aliasList.includes(action)) {
+      this.print('guest')
+    } else if (history.aliasList.includes(action)) {
+      this.historyCmdList.forEach((cmd, index) => {
+        cmdList.push(`${index + 1}  ${cmd}`)
+      })
+      this.print(cmdList)
+    } else if (env.aliasList.includes(action)) {
+      cmdList.push(
+        'TERM=react-terminal',
+        'SHELL=/bin/bash',
+        'USER=guest',
+        'PATH=/usr/local/bin:/usr/bin:/bin',
+        `PWD=${this.state.directory}`,
+        'HOME=/home/guest'
+      )
+      this.print(cmdList)
+    } else if (echo.aliasList.includes(action)) {
+      const text = commandArgs.replace(
+        /\$([A-Za-z_][A-Za-z0-9_]*)/g,
+        (match, varName) => {
+          switch (varName) {
+            case 'USER':
+              return 'guest'
+            case 'PWD':
+              return this.state.directory
+            case 'HOME':
+              return '/home/guest'
+            case 'SHELL':
+              return '/bin/bash'
+            case 'TERM':
+              return 'react-terminal'
+            case 'PATH':
+              return '/usr/local/bin:/usr/bin:/bin'
+            default:
+              return match
+          }
+        }
+      )
+      this.print(text || '')
     } else if (isStaticCommand) {
       this.print(cmd.staticList[command].list)
     } else if (isDynamicCommand) {
-      this.run(action, commandKey)
+      this.run(action, commandArgs)
     } else if (action.trim()) {
       unknown.content = unknown.contentWithCommand(action)
       this.print([unknown, help])
@@ -253,11 +366,11 @@ class Terminal extends PureComponent {
     this.setState({ command: '' })
     setTimeout(this.autoScroll, 0)
     this.inputFocus()
-  }
+  };
 
   render() {
-    const { className, config: { prompt } } = this.props
-    const { cmdList, isPrinting, command, directory } = this.state
+    const { className } = this.props
+    const { cmdList, isPrinting, command, directory, currentPrompt } = this.state
     return (
       <StyledTerminalWrapper className={className}>
         <StyledHeader>
@@ -272,33 +385,59 @@ class Terminal extends PureComponent {
           <StyledTerminalInner onClick={this.inputFocus}>
             <TransitionGroup>
               {cmdList.map((item, index) => (
-                <CSSTransition key={index} timeout={500} >
+                <CSSTransition key={index} timeout={500}>
                   <StyledLine>
-                    {typeof item === 'string'
-                      ? (<StyledCommand className="cmd">{item}</StyledCommand>)
-                      : (<>
-                        {item.time && (<StyledCommand className="time">{item.time}</StyledCommand>)}
-                        {item.label && (<StyledCommand className={item.type}>{item.label}</StyledCommand>)}
-                        {item.content && (<StyledCommand className="cmd">{item.content}</StyledCommand>)}
-                      </>)}
+                    {typeof item === 'string' ? (
+                      <StyledCommand className="cmd">{item}</StyledCommand>
+                    ) : (
+                      <>
+                        {item.time && (
+                          <StyledCommand className="time">
+                            {item.time}
+                          </StyledCommand>
+                        )}
+                        {item.label && (
+                          <StyledCommand className={item.type}>
+                            {item.label}
+                          </StyledCommand>
+                        )}
+                        {item.content && (
+                          <StyledCommand className="cmd">
+                            {item.content}
+                          </StyledCommand>
+                        )}
+                      </>
+                    )}
                   </StyledLine>
                 </CSSTransition>
               ))}
             </TransitionGroup>
-            <StyledInputWrapper ref={this.$inputWrapper} onClick={this.inputFocus} >
-              {isPrinting
-                ? (<StyledLoadingCursor>.</StyledLoadingCursor>)
-                : (<>
-                  <StyledPrompt>{prompt}</StyledPrompt>
+            <StyledInputWrapper
+              ref={this.$inputWrapper}
+              onClick={this.inputFocus}
+            >
+              {isPrinting ? (
+                <StyledLoadingCursor>.</StyledLoadingCursor>
+              ) : (
+                <>
+                  <StyledPrompt>{currentPrompt}</StyledPrompt>
                   <StyledCommand>{command}</StyledCommand>
                   <StyledBlinkCursor>&nbsp;</StyledBlinkCursor>
-                </>)}
-              <StyledInput value={command} onChange={e => { this.setState({ command: e.target.value }) }}
-                onKeyDown={this.handleCommand} autoFocus ref={this.$inputEl} />
-            </StyledInputWrapper >
-          </StyledTerminalInner >
-        </StyledTerminal >
-      </StyledTerminalWrapper >
+                </>
+              )}
+              <StyledInput
+                value={command}
+                onChange={(e) => {
+                  this.setState({ command: e.target.value })
+                }}
+                onKeyDown={this.handleCommand}
+                autoFocus
+                ref={this.$inputEl}
+              />
+            </StyledInputWrapper>
+          </StyledTerminalInner>
+        </StyledTerminal>
+      </StyledTerminalWrapper>
     )
   }
 }

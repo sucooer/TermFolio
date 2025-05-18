@@ -2,7 +2,7 @@
 	<img src="./docs/logo.png" alt="react-terminal">
 	<br>
 	<h1>React-terminal</h1>
-	<sub><a href="https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
+	<sub><a href="https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
 </div>
 <hr/>
 <p align="center">🚀 <strong>A terminal emulator in React</strong></p>
@@ -11,22 +11,22 @@
     <img src="https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square">
   </a>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/github/package-json/v/tomotoes/react-terminal?style=flat-square">
+    <img src="https://img.shields.io/github/package-json/v/simonaking/react-terminal?style=flat-square">
   </a>
-  <a href="https://github.com/Tomotoes/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
+  <a href="https://github.com/SimonAKing/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
 
 
 
 ## 👀Table of contents
 
-- [🎉Introduction](https://github.com/Tomotoes/react-terminal#introduction)
-- [💡Install](https://github.com/Tomotoes/react-terminal#install)
-- [✨Usage](https://github.com/Tomotoes/react-terminal#usage)
-- [🎨TODO](https://github.com/Tomotoes/react-terminal#todo)
-- [🎯Dev](https://github.com/Tomotoes/react-terminal#dev)
-- [💚Reward](https://github.com/Tomotoes/react-terminal#reward)
-- [📃License](https://github.com/Tomotoes/react-terminal#license)
+- [🎉Introduction](https://github.com/SimonAKing/react-terminal#introduction)
+- [💡Install](https://github.com/SimonAKing/react-terminal#install)
+- [✨Usage](https://github.com/SimonAKing/react-terminal#usage)
+- [🎨TODO](https://github.com/SimonAKing/react-terminal#todo)
+- [🎯Dev](https://github.com/SimonAKing/react-terminal#dev)
+- [💚Reward](https://github.com/SimonAKing/react-terminal#reward)
+- [📃License](https://github.com/SimonAKing/react-terminal#license)
 
 
 
@@ -34,9 +34,9 @@
 
 ![terminal-intro](./docs/view.jpg)
 
-[Try the demo](https://tomotoes.com/about/)
+[Try the demo](https://simonaking.com/about/)
 
-[`React-terminal`](https://tomotoes.com/about/) is a terminal emulator inspired by [vue-terminal](https://github.com/dongsuo/vue-terminal).
+[`React-terminal`](https://simonaking.com/about/) is a terminal emulator inspired by [vue-terminal](https://github.com/dongsuo/vue-terminal).
 
 If you are looking for an interactive application that displays information, then `React-terminal` would be a good choice for you.
 
@@ -81,7 +81,7 @@ This package also depends on `react` so make sure you've already installed it.
 ```jsx
 import Terminal from 'react-terminal-app'
 
-// refer to: https://github.com/Tomotoes/react-terminal/blob/master/demo/src/commands
+// refer to: https://github.com/SimonAKing/react-terminal/blob/master/demo/src/commands
 import dynamicList from 'command/dynamic'
 import staticList from 'command/static'
 
@@ -300,7 +300,7 @@ Defaults to `react-terimnal-app`
 This project was generated with [nwb](https://github.com/insin/nwb).
 
 ```sh
-git clone https://github.com/Tomotoes/react-terminal
+git clone https://github.com/SimonAKing/react-terminal
 cd react-terminal
 yarn install
 yarn start

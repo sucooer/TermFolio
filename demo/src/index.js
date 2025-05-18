@@ -11,7 +11,8 @@ const config = {
   prompt: '➜  ~ ',
   version: '1.0.0',
   initialDirectory: '一个坏掉的番茄',
-  bootCmd: 'intro'
+  bootCmd: 'intro',
+  welcomeMessage: 'Welcome to React Terminal! Type "help" to see available commands.',
 }
 
 ReactDOM.render(

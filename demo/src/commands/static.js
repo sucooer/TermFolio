@@ -5,12 +5,12 @@ export default {
       {
         type: 'info',
         label: 'Email:',
-        content: '`simon@tomotoes.com`'
+        content: '`hi@simonaking.com`'
       },
       {
         type: 'info',
         label: 'Github:',
-        content: '`https://github.com/tomotoes`'
+        content: '`https://github.com/SimonAKing`'
       },
       {
         type: 'info',
@@ -20,47 +20,7 @@ export default {
       {
         type: 'info',
         label: 'Telegram:',
-        content: '`https://t.me/tomotoes`'
-      }
-    ]
-  },
-  whoami: {
-    description: 'Return a piece of code about tomotoes.',
-    list: [
-      {
-        type: 'success',
-        label: 'Compiled',
-        content: '1   const'
-      },
-      {
-        type: 'success',
-        label: 'Compiled',
-        content: '2     tomatoes = "番茄",'
-      },
-      {
-        type: 'success',
-        label: 'Compiled',
-        content: '3     tomotoes = "坏掉的番茄";'
-      },
-      {
-        type: 'success',
-        label: 'Compiled',
-        content: '4   const myTomotoes = new Promise((resolve, reject) => {'
-      },
-      {
-        type: 'warning',
-        label: 'Compiled',
-        content: '5     tomatoes === "番茄"?resolve(tomotoes):reject(tomatoes)'
-      },
-      {
-        type: 'success',
-        label: 'Compiled',
-        content: '6   }).then(()=>"My tomatoes,I\'m coming!")'
-      },
-      {
-        type: 'error',
-        label: 'SyntaxError',
-        content: '7   .catch(()=>"What the f*ck!");'
+        content: '`https://t.me/Simon_AKing`'
       }
     ]
   },

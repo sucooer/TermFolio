@@ -7,7 +7,6 @@ const getTime = () => {
 }
 
 const introduction = [
-  `Welcome to 一个坏掉的番茄.`,
   {
     type: 'system',
     label: 'System',
@@ -40,29 +39,8 @@ const introduction = [
     time: getTime(),
     type: 'info',
     label: 'Email:',
-    content: 'simon@tomotoes.com'
+    content: 'hi@simonaking.com'
   },
-  {
-    time: getTime(),
-    type: 'info',
-    label: 'Aim:',
-    content: 'Three goals as follows:'
-  },
-  {
-    type: 'black',
-    label: '=> 1.',
-    content: 'To make outstanding contributions to open source.'
-  },
-  {
-    type: 'black',
-    label: '=> 2.',
-    content: 'Become a full stack engineer.'
-  },
-  {
-    type: 'black',
-    label: '=> 3.',
-    content: 'Find a good job.'
-  }
 ]
 
 export default {
@@ -121,7 +99,7 @@ export default {
       return new Promise((resolve) => {
         print({ type: 'success', label: 'Success', content: 'Opening' })
 
-        window.open('https://tomotoes.com/blog', '_blank')
+        window.open('https://simonaking.com/blog', '_blank')
         resolve({ type: 'success', label: 'Done', content: ':)' })
       })
     }
@@ -132,7 +110,7 @@ export default {
       return new Promise((resolve) => {
         print({ type: 'success', label: 'Success', content: 'Opening' })
 
-        window.open('https://tomotoes.com/blog/resume', '_blank')
+        window.open('https://simonaking.com/blog/resume', '_blank')
         resolve({ type: 'success', label: 'Done', content: ':)' })
       })
     }
@@ -143,7 +121,7 @@ export default {
       return new Promise((resolve) => {
         print({ type: 'success', label: 'Success', content: 'Opening' })
 
-        window.open('https://tomotoes.com/2048', '_blank')
+        window.open('https://simonaking.com/2048', '_blank')
         resolve({ type: 'success', label: 'Done', content: 'Game Start!' })
       })
     }

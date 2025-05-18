@@ -2,7 +2,7 @@
 	<img src="./docs/logo.png" alt="react-terminal">
 	<br>
 	<h1>React-terminal</h1>
-	<sub><a href="https://github.com/Tomotoes/react-terminal">English document</a></sub>
+	<sub><a href="https://github.com/SimonAKing/react-terminal">English document</a></sub>
 </div>
 <hr/>
 <p align="center">🚀 <strong>一个简洁&漂亮的终端模拟应用</strong></p>
@@ -11,20 +11,20 @@
     <img src="https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square">
   </a>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/github/package-json/v/tomotoes/react-terminal?style=flat-square">
+    <img src="https://img.shields.io/github/package-json/v/SimonAKing/react-terminal?style=flat-square">
   </a>
-  <a href="https://github.com/Tomotoes/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
+  <a href="https://github.com/SimonAKing/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
 
 ## 👀目录
 
-- [🎉简介](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#简介)
-- [💡安装](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#安装)
-- [✨使用](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#使用)
-- [🎨TODO](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#todo)
-- [🎯开发](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#开发)
-- [💚赞赏](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#赞赏)
-- [📃协议](https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md#协议)
+- [🎉简介](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#简介)
+- [💡安装](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#安装)
+- [✨使用](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#使用)
+- [🎨TODO](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#todo)
+- [🎯开发](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#开发)
+- [💚赞赏](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#赞赏)
+- [📃协议](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#协议)
 
 
 
@@ -33,9 +33,9 @@
 
 ![terminal-intro](./docs/view.jpg)
 
-[在线体验](https://tomotoes.com/about/)
+[在线体验](https://simonaking.com/about/)
 
-[`React-terminal`](https://tomotoes.com/about/) 是一款终端模拟应用，其诞生离不开 [vue-terminal](https://github.com/dongsuo/vue-terminal) 开源项目。
+[`React-terminal`](https://simonaking.com/about/) 是一款终端模拟应用，其诞生离不开 [vue-terminal](https://github.com/dongsuo/vue-terminal) 开源项目。
 
 如果你正在找一款展示信息的交互式应用，那么 `React-terminal` 会是你很好的选择。
 
@@ -77,7 +77,7 @@ yarn add react-terminal-app
 ```jsx
 import Terminal from 'react-terminal-app'
 
-// 可参考: https://github.com/Tomotoes/react-terminal/blob/master/demo/src/commands
+// 可参考: https://github.com/SimonAKing/react-terminal/blob/master/demo/src/commands
 import staticList from 'command/static'
 import dynamicList from 'command/dynamic'
 
@@ -286,7 +286,7 @@ type command = ICommand | string
 项目使用的脚手架是[nwb](https://github.com/insin/nwb)。
 
 ```sh
-git clone https://github.com/Tomotoes/react-terminal
+git clone https://github.com/SimonAKing/react-terminal
 cd react-terminal
 npm install
 npm start
