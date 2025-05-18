@@ -2,7 +2,7 @@
 	<img src="./docs/logo.png" alt="react-terminal">
 	<br>
 	<h1>React-terminal</h1>
-	<sub>Built with ❤︎ by <a href="https://tomotoes.com">Simon Ma</a> - <a href="https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
+	<sub><a href="https://github.com/Tomotoes/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
 </div>
 <hr/>
 <p align="center">🚀 <strong>A terminal emulator in React</strong></p>
@@ -58,7 +58,7 @@ Some ideas for using React Terminal in your next project:
 
 - **Demos**: Create mock commands in JavaScript for your CLI app, and let users try out commands in their browser with simulated output.
 
-  
+
 
 ## 💡Install
 
@@ -114,14 +114,14 @@ function App() {
       dynamicList: PropTypes.object,
       staticList: PropTypes.object
     }).isRequired,
- 
+
     config: PropTypes.shape({
       initialDirectory: PropTypes.string,
       prompt: PropTypes.string,
       version: PropTypes.string,
       bootCmd: PropTypes.string
     }),
-        
+
     className: PropTypes.string,
 }
 ```
@@ -159,7 +159,7 @@ Defaults to `react-terimnal-app`
 
 1. prompt
 
-   The text to show before the prompt. 
+   The text to show before the prompt.
 
    Defaults to `➜  ~ `.
 
@@ -181,7 +181,7 @@ Defaults to `react-terimnal-app`
 
    Defaults to `intro`.
 
-   
+
 
 #### cmd
 
@@ -242,7 +242,7 @@ Defaults to `react-terimnal-app`
    ```
 
 	Example: Define a `skills` command to display the skills you master.
-	
+
 	```js
 	  skill: {
 	    description: 'Return a list of my skills and my rating of them.',
@@ -306,22 +306,6 @@ yarn install
 yarn start
 ```
 
-Feel free to open issues or PRs for any problem you may encounter, typos that you see or aspects that are confusing. 
+Feel free to open issues or PRs for any problem you may encounter, typos that you see or aspects that are confusing.
 
 Contributions are welcome, open an issue or email me if you have something you want to work on.
-
-
-
-## 💚Reward
-
-If you like `React-terminal` and it really helps you, please give me a cup of coffee~
-
-paypal: [https://paypal.me/tomotoes](https://paypal.me/tomotoes)
-
-[![支付宝赞助按钮](https://camo.githubusercontent.com/f4874996db5ac421925db08778d800d76d36abbc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545362539342541462545342542422539382545352541452539442d25453525393025393154412545362538442539302545352538412541392d677265656e2e737667)](https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/alipay.png)[![微信赞助按钮](https://camo.githubusercontent.com/26101aa838286ad0d45a6f71b25fdc6e14e7668c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2545352542452541452545342542462541312d25453525393025393154412545362538442539302545352538412541392d677265656e2e737667)](https://cdn.jsdelivr.net/gh/Tomotoes/images/blog/wechat.png)
-
-
-
-## 📃License
-
-MIT License © Simon Ma

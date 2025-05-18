@@ -2,11 +2,11 @@
   "name": "react-terminal-app",
   "version": "1.6.8",
   "description": "A terminal emulator in React",
-  "author": "SimonAking",
-  "homepage": "https://Tomotoes/react-terminal/",
+  "author": "SimonAKing",
+  "homepage": "https://SimonAKing/react-terminal/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tomotoes/react-terminal.git"
+    "url": "git+https://github.com/SimonAKing/react-terminal.git"
   },
   "keywords": [
     "react",
