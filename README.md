@@ -1,15 +1,15 @@
 <div align="center">
-	<h1>React-terminal</h1>
+	<h1>TermFolio</h1>
 	<sub><a href="https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md">中文文档</a></sub>
 </div>
 <hr/>
-<p align="center">🚀 <strong>A terminal emulator in React</strong></p>
+<p align="center">🚀 <strong>An elegant terminal-style portfolio component for developers</strong></p>
 <p align="center">
   <a href="https://github.com/feross/standard">
     <img src="https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square">
   </a>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/github/package-json/v/simonaking/react-terminal?style=flat-square">
+    <img src="https://img.shields.io/github/package-json/v/SimonAKing/react-terminal?style=flat-square">
   </a>
   <a href="https://github.com/SimonAKing/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
@@ -32,30 +32,25 @@
 
 ![terminal-intro](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2YwcmZlMzhzcmx2YW5tOXQ5ZGdmand6bjVianN5a21zdm04eWRueSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aNmpU6nhm2GR8IXb2r/giphy.gif)
 
-[Try the demo](https://simonaking.com/about/)
+[Live Demo](https://simonaking.com/about/)
 
-[`React-terminal`](https://simonaking.com/about/) is a terminal emulator inspired by [vue-terminal](https://github.com/dongsuo/vue-terminal).
+[`TermFolio`](https://simonaking.com/about/) is a terminal-style portfolio component designed specifically for developers, inspired by the [vue-terminal](https://github.com/dongsuo/vue-terminal) project.
 
-If you are looking for an interactive application that displays information, then `React-terminal` would be a good choice for you.
+If you're looking for a unique way to showcase your personal information, project experience, or technical skills, `TermFolio` is your perfect choice. It beautifully combines the geek aesthetics of a terminal with personal presentation, creating a distinctive interactive experience.
 
+Key Features of `TermFolio`:
 
+1. Built-in System Commands: `ls`, `cd`, `pwd`, `echo`, etc., allowing visitors to browse your information like using a real terminal
+2. Smart Command Completion: Supports `tab` auto-completion
+3. Command History: Navigate through previous commands using arrow keys
+4. Highly Customizable: Customize command styles and display content
+5. Flexible Extension: Create any custom display commands through JS
 
-Some of cool features of this React component are:
+Recommended Use Cases:
 
-1. Built-in system commands：`ls` `cd` `pwd` `echo` etc
-2. You can use `tab` to automatically complete the command
-3. Command history using arrow up and down
-4. Customizable commands, prompt and label style
-5. Support callbacks(async/non-async) for commands
-
-
-
-Some ideas for using React Terminal in your next project:
-
-- **Personal website**: Make your personal website or web resume a command-line interface.
-
-- **Demos**: Create mock commands in JavaScript for your CLI app, and let users try out commands in their browser with simulated output.
-
+- **Personal Homepage**: Create a unique personal introduction page
+- **Online Resume**: Present your professional experience through an interactive terminal
+- **Project Showcase**: Display your portfolio projects via command-line interface
 
 
 ## 💡Install

@@ -10,7 +10,7 @@ const introduction = [
   {
     type: 'system',
     label: 'System',
-    content: `cd react-terminal`
+    content: `cd TermFolio`
   },
   {
     type: 'system',

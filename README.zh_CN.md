@@ -1,31 +1,28 @@
 <div align="center">
-	<h1>React-terminal</h1>
-	<sub><a href="https://github.com/SimonAKing/react-terminal">English document</a></sub>
+	<h1>TermFolio</h1>
+	<sub><a href="https://github.com/SimonAKing/termfolio">English document</a></sub>
 </div>
 <hr/>
-<p align="center">🚀 <strong>一个简洁&漂亮的终端模拟应用</strong></p>
+<p align="center">🚀 <strong>一个优雅的终端风格个人作品集展示组件</strong></p>
 <p align="center">
   <a href="https://github.com/feross/standard">
     <img src="https://img.shields.io/badge/code%20style-standard-green.svg?style=flat-square">
   </a>
   <a href="https://reactjs.org/">
-    <img src="https://img.shields.io/github/package-json/v/SimonAKing/react-terminal?style=flat-square">
+    <img src="https://img.shields.io/github/package-json/v/SimonAKing/termfolio?style=flat-square">
   </a>
-  <a href="https://github.com/SimonAKing/react-terminal/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
+  <a href="https://github.com/SimonAKing/termfolio/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square"></a>
 </p>
 
 ## 👀目录
 
-- [🎉简介](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#简介)
-- [💡安装](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#安装)
-- [✨使用](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#使用)
-- [🎨TODO](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#todo)
-- [🎯开发](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#开发)
-- [💚赞赏](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#赞赏)
-- [📃协议](https://github.com/SimonAKing/react-terminal/blob/master/README.zh_CN.md#协议)
-
-
-
+- [🎉简介](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#简介)
+- [💡安装](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#安装)
+- [✨使用](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#使用)
+- [🎨TODO](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#todo)
+- [🎯开发](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#开发)
+- [💚赞赏](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#赞赏)
+- [📃协议](https://github.com/SimonAKing/termfolio/blob/master/README.zh_CN.md#协议)
 
 ## 🎉简介
 
@@ -33,49 +30,43 @@
 
 [在线体验](https://simonaking.com/about/)
 
-[`React-terminal`](https://simonaking.com/about/) 是一款终端模拟应用，其诞生离不开 [vue-terminal](https://github.com/dongsuo/vue-terminal) 开源项目。
+[`TermFolio`](https://simonaking.com/about/) 是一款终端风格的个人作品集展示组件，专为开发者打造的独特展示平台。其灵感来源于 [vue-terminal](https://github.com/dongsuo/vue-terminal) 开源项目。
 
-如果你正在找一款展示信息的交互式应用，那么 `React-terminal` 会是你很好的选择。
+如果你正在寻找一种独特的方式来展示你的个人信息、项目经历或技术技能，那么 `TermFolio` 会是你的不二之选。它将终端的极客风格与个人展示完美结合，创造出独特的交互体验。
 
-`React-terminal` 所支持的特性如下：
+`TermFolio` 特性：
 
-1. 内置系统命令：`ls`,`cd`,`pwd`，`echo` 等
-2. 可使用`tab`自动补全命令
-3. 可使用方向键回到历史命令
-4. 可自定义所有命令样式
-5. 与JS结合，可任意模拟系统命令
+1. 内置系统命令：`ls`,`cd`,`pwd`，`echo` 等，让访客像使用真实终端一样浏览你的信息
+2. 智能命令补全：支持`tab`自动补全命令
+3. 历史记录：可使用方向键回溯历史命令
+4. 高度可定制：支持自定义命令样式和展示内容
+5. 灵活扩展：可以通过JS自定义任何展示命令
 
+使用场景推荐：
 
-
-在下一个项目中使用React Terminal的一些想法：
-
-- **个人网站**：展示个人信息，或交互式简历。
-- **Demos**：在JavaScript中为CLI应用程序创建模拟命令，并让用户在浏览器中尝试模拟输出的命令。
-
-
+- **个人主页**：创建独特的个人介绍页面
+- **在线简历**：以交互式终端的方式展示你的职业经历
 
 ## 💡安装
 
 ```sh
-npm i react-terminal-app
+npm i termfolio
 ```
 
 OR
 
 ```sh
-yarn add react-terminal-app
+yarn add termfolio
 ```
 
 此应用依赖于`react`, 请确保你已经安装。
 
-
-
 ## ✨使用
 
 ```jsx
-import Terminal from 'react-terminal-app'
+import Terminal from 'termfolio'
 
-// 可参考: https://github.com/SimonAKing/react-terminal/blob/master/demo/src/commands
+// 可参考: https://github.com/SimonAKing/termfolio/blob/master/demo/src/commands
 import staticList from 'command/static'
 import dynamicList from 'command/dynamic'
 
@@ -95,8 +86,6 @@ function App() {
    return <Terminal cmd={cmd} config={config} />
 }
 ```
-
-
 
 ### 数据结构
 
@@ -120,8 +109,6 @@ function App() {
 }
 ```
 
-
-
 #### Command
 
 > Command是一个对象，用于定义终端中显示的消息格式：
@@ -137,15 +124,11 @@ interface ICommand {
 type command = ICommand | string
 ```
 
-
-
 ### Props
 
 #### className
 
-`React-terminal` 根节点的类名, 可用来自定义样式，默认值:`react-terimnal-app`
-
-
+`termfolio` 根节点的类名, 可用来自定义样式，默认值:`termfolio`
 
 #### config
 
@@ -164,8 +147,6 @@ type command = ICommand | string
 4. bootCmd
 
    终端初始化时, 所要执行的命令，默认值：`intro`
-
-
 
 #### cmd
 
@@ -238,8 +219,6 @@ type command = ICommand | string
 	   ]}
 	```
 
-
-
 ### 内置命令
 
 #### System命令
@@ -250,8 +229,6 @@ type command = ICommand | string
    - `pwd` - print name of current directory
    - `cd` - change the current directory
    - `version` - print the version of current app
-
-
 
 #### 提示命令
 
@@ -267,8 +244,6 @@ type command = ICommand | string
 
 - 出错时 - `'Something went wrong!'`
 
-
-
 ## 🎨TODO
 
 1. 增加终端左上角按钮点击功能
@@ -277,15 +252,13 @@ type command = ICommand | string
 4. 增加多行输入功能
 5. 增加插件系统支持
 
-
-
 ## 🎯开发
 
 项目使用的脚手架是[nwb](https://github.com/insin/nwb)。
 
 ```sh
-git clone https://github.com/SimonAKing/react-terminal
-cd react-terminal
+git clone https://github.com/SimonAKing/termfolio
+cd termfolio
 npm install
 npm start
 ```
