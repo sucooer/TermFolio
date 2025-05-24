@@ -88,6 +88,12 @@ class Terminal extends PureComponent {
     const {
       config: { bootCmd },
     } = this.props
+
+    // Add immediate focus
+    setTimeout(() => {
+      this.inputFocus()
+    }, 100)
+
     this.run(bootCmd).then(() => {
       const { help, clear, exit } = systemCmdList
       this.print([help, clear, exit])
@@ -118,7 +124,9 @@ class Terminal extends PureComponent {
   };
 
   inputFocus = () => {
-    this.$inputEl.current.focus()
+    if (this.$inputEl.current) {
+      this.$inputEl.current.focus()
+    }
   };
 
   autoScroll = () => {

@@ -87,12 +87,17 @@ export const StyledInputWrapper = styled.p`
 `
 
 export const StyledInput = styled.input`
-  position: relative;
+  position: absolute;
   background: transparent;
   border: none;
   width: 1px;
+  height: 1px;
   opacity: 0;
+  padding: 0;
+  margin: 0;
   cursor: default;
+  pointer-events: none;
+  z-index: -1;
 
   &:focus {
     outline: none;
