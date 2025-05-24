@@ -382,7 +382,7 @@ class Terminal extends PureComponent {
           </StyledHeaderDotList>
         </StyledHeader>
         <StyledTerminal ref={this.$terminal}>
-          <StyledTerminalInner onClick={this.inputFocus}>
+          <StyledTerminalInner>
             <TransitionGroup>
               {cmdList.map((item, index) => (
                 <CSSTransition key={index} timeout={500}>
