@@ -143,12 +143,37 @@ const blinkDot = keyframes`
 `
 
 export const StyledBlinkCursor = styled.span`
-  display: inline-block;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
   width: 8px;
-  height: 15px;
-  background-color: #56b6c2;
-  margin-left: 4px;
-  animation: ${blinkDot} 1s step-end infinite;
+  height: 17px;
+  line-height: 17px;
+  vertical-align: middle;
+  color: inherit;
+  margin-left: 0;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${props => props.children === '\u00A0' ? '#56b6c2' : 'rgba(86, 182, 194, 0.7)'};
+    animation: ${blinkDot} 1s step-end infinite;
+  }
+
+  ${props => props.children !== '\u00A0' && `
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      z-index: 2;
+      color: #abb2bf;
+    }
+  `}
 `
 
 export const StyledLine = styled.div`
@@ -271,4 +296,5 @@ export const StyledCommand = styled.span`
   color: inherit;
   font-family: inherit;
   line-height: inherit;
+  vertical-align: middle;
 `

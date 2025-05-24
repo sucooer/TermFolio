@@ -66,6 +66,7 @@ class Terminal extends PureComponent {
       directory: config.initialDirectory,
       currentPrompt: `➜  ${config.initialDirectory} `,
       isPrinting: true,
+      cursorPosition: 0,
       processes: [
         { pid: 1, name: 'system', status: 'running' },
         { pid: 2, name: 'terminal', status: 'running' },
@@ -143,9 +144,26 @@ class Terminal extends PureComponent {
     const isCKey = e.keyCode === 67
     const isDKey = e.keyCode === 68
     const isLKey = e.keyCode === 76
+    const isLeftKey = e.keyCode === 37
+    const isRightKey = e.keyCode === 39
     const isCtrlCKey = isCKey && e.ctrlKey && !e.shiftKey
     const isCtrlDKey = isDKey && e.ctrlKey && !e.shiftKey
     const isCtrlLKey = isLKey && e.ctrlKey && !e.shiftKey
+
+    const { command, isPrinting } = this.state
+    if (isPrinting) {
+      return
+    }
+
+    if (isLeftKey || isRightKey) {
+      const newPos = isLeftKey
+        ? Math.max(0, this.state.cursorPosition - 1)
+        : Math.min(this.state.command.length, this.state.cursorPosition + 1)
+      this.setState({ cursorPosition: newPos }, () => {
+        setCaretPosition(this.$inputEl.current, newPos)
+      })
+      e.preventDefault()
+    }
 
     if (isDownKey) {
       this.historyCmdIndex = Math.min(
@@ -158,16 +176,14 @@ class Terminal extends PureComponent {
     if (isUpKey || isDownKey) {
       const historyCmd = this.historyCmdList[this.historyCmdIndex]
       if (historyCmd) {
-        this.setState({ command: historyCmd })
+        this.setState({
+          command: historyCmd,
+          cursorPosition: historyCmd.length
+        })
         setTimeout(() => {
           setCaretPosition(this.$inputEl.current, historyCmd.length + 1)
         }, 0)
       }
-    }
-
-    const { command, isPrinting } = this.state
-    if (isPrinting) {
-      return
     }
 
     if (isTabKey) {
@@ -378,7 +394,7 @@ class Terminal extends PureComponent {
 
   render() {
     const { className } = this.props
-    const { cmdList, isPrinting, command, directory, currentPrompt } = this.state
+    const { cmdList, isPrinting, command, directory, currentPrompt, cursorPosition } = this.state
     return (
       <StyledTerminalWrapper className={className}>
         <StyledHeader>
@@ -429,16 +445,33 @@ class Terminal extends PureComponent {
               ) : (
                 <>
                   <StyledPrompt>{currentPrompt}</StyledPrompt>
-                  <StyledCommand>{command}</StyledCommand>
-                  <StyledBlinkCursor>&nbsp;</StyledBlinkCursor>
+                  <StyledCommand>{command.slice(0, cursorPosition)}</StyledCommand>
+                  <StyledBlinkCursor>
+                    {cursorPosition === command.length ? '\u00A0' : command[cursorPosition] || '\u00A0'}
+                  </StyledBlinkCursor>
+                  <StyledCommand>{command.slice(cursorPosition + (cursorPosition === command.length ? 0 : 1))}</StyledCommand>
                 </>
               )}
               <StyledInput
                 value={command}
                 onChange={(e) => {
-                  this.setState({ command: e.target.value })
+                  const newPos = e.target.selectionStart
+                  this.setState({
+                    command: e.target.value,
+                    cursorPosition: newPos
+                  })
                 }}
                 onKeyDown={this.handleCommand}
+                onSelect={(e) => {
+                  this.setState({
+                    cursorPosition: e.target.selectionStart
+                  })
+                }}
+                onFocus={(e) => {
+                  this.setState({
+                    cursorPosition: e.target.selectionStart
+                  })
+                }}
                 autoFocus
                 ref={this.$inputEl}
               />
