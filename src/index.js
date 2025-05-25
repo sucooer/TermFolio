@@ -405,7 +405,7 @@ class Terminal extends PureComponent {
             <StyledHeaderDotItem color="green" />
           </StyledHeaderDotList>
         </StyledHeader>
-        <StyledTerminal ref={this.$terminal}>
+        <StyledTerminal ref={this.$terminal} onClick={this.inputFocus}>
           <StyledTerminalInner>
             <TransitionGroup>
               {cmdList.map((item, index) => (
