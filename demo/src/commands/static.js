@@ -5,22 +5,22 @@ export default {
       {
         type: 'info',
         label: 'Email:',
-        content: '`hi@simonaking.com`'
+        content: '`saitobin@outlook.com`'
       },
       {
         type: 'info',
         label: 'Github:',
-        content: '`https://github.com/SimonAKing`'
+        content: '`https://github.com/sucooer`'
       },
       {
         type: 'info',
         label: 'Twitter:',
-        content: '`https://twitter.com/simon_aking`'
+        content: '`https://x.com/Saitoling`'
       },
       {
         type: 'info',
         label: 'Telegram:',
-        content: '`https://t.me/Simon_AKing`'
+        content: '`https://t.me/anyanz`'
       }
     ]
   },
@@ -52,19 +52,19 @@ export default {
     list: [
       ' 《 海绵宝宝 》',
       ' 《 瑞克与莫蒂 》',
-      ' 《 一人之下 》',
-      ' 《 镇魂街 》',
-      ' 《 一拳超人 》',
+      ' 《 天使降临到我身边 》',
+      ' 《 四月是你的谎言 》',
+      ' 《 名侦探柯南 》',
       ' 《 某科学的超电磁炮 》',
       ' 《 罗小黑战记 》',
       ' 《 鬼灭之刃 》',
       ' 《 辉夜大小姐想让我告白 》',
-      ' 《 笨女孩 》',
+      ' 《 紫罗兰永恒花园 》',
       ' 《 埃罗芒阿老师 》',
-      ' 《 Charlotte 》',
-      ' 《 灵笼 》',
+      ' 《 工作细胞 》',
+      ' 《 擅长捉弄的高木同学 》',
       ' 《  干物妹！小埋 》',
-      ' 《 这个勇者明明超强却过分慎重 》'
+      ' 《 葬送的芙莉莲 》'
     ]
   },
   book: {

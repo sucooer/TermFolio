@@ -10,7 +10,7 @@ const introduction = [
   {
     type: 'system',
     label: 'System',
-    content: `cd TermFolio`
+    content: `cd /about`
   },
   {
     type: 'system',
@@ -21,7 +21,7 @@ const introduction = [
     time: getTime(),
     type: 'info',
     label: 'Name:',
-    content: 'Simon Ma'
+    content: 'Anyaer • G.'
   },
   {
     time: getTime(),
@@ -33,13 +33,13 @@ const introduction = [
     time: getTime(),
     type: 'info',
     label: 'Age:',
-    content: '23'
+    content: '28'
   },
   {
     time: getTime(),
     type: 'info',
     label: 'Email:',
-    content: 'hi@simonaking.com'
+    content: 'saitobin@outlook.com'
   },
 ]
 
@@ -99,7 +99,7 @@ export default {
       return new Promise((resolve) => {
         print({ type: 'success', label: 'Success', content: 'Opening' })
 
-        window.open('https://simonaking.com/blog', '_blank')
+        window.open('https://sonic.520717.xyz', '_blank')
         resolve({ type: 'success', label: 'Done', content: ':)' })
       })
     }
@@ -115,15 +115,4 @@ export default {
       })
     }
   },
-  2048: {
-    description: 'Open a 2048 Game in a new tab.',
-    run(print) {
-      return new Promise((resolve) => {
-        print({ type: 'success', label: 'Success', content: 'Opening' })
-
-        window.open('https://simonaking.com/2048', '_blank')
-        resolve({ type: 'success', label: 'Done', content: 'Game Start!' })
-      })
-    }
-  }
 }
