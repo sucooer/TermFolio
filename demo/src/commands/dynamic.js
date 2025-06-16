@@ -104,13 +104,13 @@ export default {
       })
     }
   },
-  resume: {
-    description: 'Open my resume in a new tab.',
+  music: {
+    description: 'Open music player in a new tab.',
     run(print) {
       return new Promise((resolve) => {
         print({ type: 'success', label: 'Success', content: 'Opening' })
 
-        window.open('https://simonaking.com/blog/resume', '_blank')
+        window.open('https://music.520717.xyz/', '_blank')
         resolve({ type: 'success', label: 'Done', content: ':)' })
       })
     }
